@@ -46,10 +46,15 @@ fn main() {
 
     }
 
+    let mut all_results = vec![];
     for handle in join_handles{
         let results = handle.join().unwrap();
-        log::info!("Results: {:?}", results);
+
+        results.into_iter().for_each(|x| all_results.push(x));
     }
+
+ 
+    log::info!("Results: {:?}", all_results);
 
     let duration = start_time.elapsed();
     info!("Finished search in {} ms ", duration.as_millis());
