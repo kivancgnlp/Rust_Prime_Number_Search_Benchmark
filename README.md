@@ -2,6 +2,15 @@
 Search prime numbers in a multi threaded environment 
 
 
+# Compiling
+
+# Build & Run instructions : 
+
+1. Install Rust: https://rustup.rs
+2. Clone or unzip project
+3. cd project
+4. cargo build
+5. cargo run -- [command line arguments]
 
 # Running 
 
