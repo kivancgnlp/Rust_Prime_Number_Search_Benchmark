@@ -36,7 +36,7 @@ fn main() {
     for tp in thread_params{
 
         let th = std::thread::spawn(move || {
-            log::info!("Staring thread with start number and count: {} {}", tp.starting_number,tp.count);
+            log::info!("Starting thread with start number and count: {} {}", tp.starting_number,tp.count);
             let results = PrimeSearch::find_primes(tp.starting_number,tp.count);
             log::info!("Thread {} ended", tp.name);
             results
@@ -66,11 +66,11 @@ struct CommandLineArgs {
     #[arg(short, long, default_value = "100000000")]
     starting_number: u32,
 
-    /// Used for setting other threads Starting number
+    /// Used for setting other threads starting number
     #[arg(short = 'd', long, default_value = "1000")]
     start_delta_between_thread: u32,
 
-    /// Number of primes
+    /// Number of primes per thread
     #[arg(short, long, default_value_t = 10)]
     count: u32,
 
